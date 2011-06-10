@@ -1,5 +1,25 @@
 TOSP - Terraria Open Source Plugins
 
+I'll be adding more documentation soon.
+
+Download link: https://github.com/downloads/bbf/TOSP/TOSPlugins-latest.zip
+
+To install, copy to your tMod plugins directory.
+
+You need the Permissions plugin as well.
+
+The following permissions are available:
+
+* regionprotect.use
+This permission allows users to create their own personal regions.
+
+regionprotect.bigregions:
+This permission allows users to make unlimited size regions.
+
+regionprotect.admin:
+This permission allows users to make changes even on protected regions.
+
+
 
 License:
 GPL v3
