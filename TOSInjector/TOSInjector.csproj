@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{AE9124E6-18CA-4DB4-937B-7C6BABAB4576}</ProjectGuid>
+    <ProjectGuid>{2056FBF6-8746-429C-BE49-50242D0C2973}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TOSUtil</RootNamespace>
-    <AssemblyName>TOSUtil</AssemblyName>
+    <RootNamespace>TOSP</RootNamespace>
+    <AssemblyName>TOSInjector</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,8 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Permissions">
-      <HintPath>..\..\tMod\plugins\Permissions.dll</HintPath>
+    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Mono.Cecil">
+      <HintPath>..\lib\Mono.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,16 +47,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Serializers.cs" />
-    <Compile Include="TileUtils.cs" />
-    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="Hook.cs" />
+    <Compile Include="Patches.cs" />
+    <Compile Include="TOSInjector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TOSUtil\TOSUtil.csproj">
+      <Project>{AE9124E6-18CA-4DB4-937B-7C6BABAB4576}</Project>
+      <Name>TOSUtil</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>copy /y $(TargetPath) $(SolutionDir)..\tMod\plugins\
-</PostBuildEvent>
-  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

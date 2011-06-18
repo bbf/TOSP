@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Terraria.TOSUtil;
 using System.Xml.Serialization;
 using System.IO;
 using Permissions;
 using System.Runtime.InteropServices;
+using TOSP.Util;
 
 namespace Terraria
 {
@@ -361,37 +361,30 @@ namespace Terraria
 
         private void LoadRegions()
         {
-            try
-            {
-                regions = null;
-                FileStream fileStream = new FileStream(CONFIG_NAME, FileMode.Open);
-                regions = (List<ProtectedRegion>)configSerializer.Deserialize(fileStream);
-                WriteLog("Loaded " + regions.Count + " regions from config.");
-            }
-            catch (FileNotFoundException)
-            {
-            }
+            regions = (List<ProtectedRegion>) Serializers.DeserializeXML(CONFIG_NAME, configSerializer);
 
             if (regions == null)
             {
                 WriteLog("No regions found on config, starting from scratch.");
                 regions = new List<ProtectedRegion>();
             }
+            else
+            {
+                WriteLog("Loaded " + regions.Count + " regions from config.");
+            }
         }
 
         private void SaveRegions()
         {
-            try
+
+            if (Serializers.SerializeXML(CONFIG_NAME, configSerializer, regions))
             {
-                FileStream fileStream = new FileStream(CONFIG_NAME, FileMode.Create);
-                configSerializer.Serialize(fileStream, regions);
+                WriteLog("Could not save regions to file.");
+            }
+            else
+            {
                 WriteLog("Wrote " + regions.Count + " regions to config.");
-                return;
             }
-            catch (Exception)
-            {
-            }
-            WriteLog("Could not save regions to file.");
         }
 
         private void onDeleteRegion(Player player)

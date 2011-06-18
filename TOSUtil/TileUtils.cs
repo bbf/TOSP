@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Terraria;
 
-namespace Terraria.TOSUtil
+namespace TOSP.Util
 {
     /*
      * Credits go to: http://terrariaworldviewer.codeplex.com/

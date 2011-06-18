@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Terraria;
 
-namespace Terraria.TOSUtil
+namespace TOSP.Util
 {
     public static class ExtensionMethods
     {
@@ -15,7 +16,7 @@ namespace Terraria.TOSUtil
             {
                 if (message.Length < 81)
                 {
-                    player.sendMessage(message);
+                    //player.sendMessage(message);
                     message = "";
                 }
                 else
@@ -23,7 +24,7 @@ namespace Terraria.TOSUtil
                     int firstSpace = message.IndexOf(' ', 80);
                     string section = message.Substring(0, firstSpace);
                     message = message.Substring(firstSpace + 1);
-                    player.sendMessage(section);
+                    //player.sendMessage(section);
                 }
 
             }

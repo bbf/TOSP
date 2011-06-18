@@ -49,3 +49,7 @@ _ReSharper*/
 # Office Temp Files
 ~$*
 
+# Libraries that reside in lib
+Mono.Cecil.dll
+TerrariaServer.exe
+
