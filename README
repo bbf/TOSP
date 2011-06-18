@@ -1,9 +1,25 @@
 TOSP - Terraria Open Source Plugins
 
-I'll be adding more documentation soon.
 
-Download link: https://github.com/downloads/bbf/TOSP/TOSPlugins-latest.zip
+TOSP now includes it's own code injector.
+Unlike tMod which distributes a modified exe (which is illegal BTW), TOSP does this injection at runtime.
 
+Currently, the injector is just a proof of concept, and it need more more work before it's usefull at all.
+I just want to receive some feedback from the Terraria staff if they would accept this method distribution.
+As it includes no code from Terraria, it might be considered legal, and if it's ok with them, I'll continue it's development.
+The current injector will just protect the server from any kind of tile modification.
+
+
+
+================================================================================================================================
+
+
+
+
+
+
+To download the original Region Protect plugin (which uses tMod 0.10), use this link:
+https://github.com/downloads/bbf/TOSP/TOSPlugins-latest.zip
 To install, copy to your tMod plugins directory.
 
 You need the Permissions plugin as well.
